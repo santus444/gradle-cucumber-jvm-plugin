@@ -36,7 +36,7 @@ to run up to 3 parallel forks. The *cucumberTest* source set will depend on the 
             }
         }
         dependencies {
-            classpath "com.commercehub:gradle-cucumber-jvm-plugin:0.7"
+            classpath "com.commercehub:gradle-cucumber-jvm-plugin:0.8"
         }
     }
     plugins {
@@ -53,6 +53,9 @@ to run up to 3 parallel forks. The *cucumberTest* source set will depend on the 
     
     cucumberTest {
         stepDefinitionRoots = ['cucumber.steps', 'cucumber.hooks']
+        systemProperties = [
+            'myVar': 'myValue'
+        ]
     }
     
     repositories {
@@ -80,6 +83,7 @@ property values form the project defaults. Both levels of configuration make the
 * `isStrict`: A boolean value indicating whether scenarios should be evaluated strictly. Defaults to **false**
 * `snippits`: Indicator to cucumber on what style to use for generated step examples. Legal values include camelcase, underscore. Defaults to **camelcase**
 * `maxParallelForks`: Maximum number of forked Java processes to start to run tests in parallel. Default to **1**
+* `systemProperties`: Map of properties to values (String->String) to pass to the forked test running JVMs as Java system properties.
 
 ### Reporting
 

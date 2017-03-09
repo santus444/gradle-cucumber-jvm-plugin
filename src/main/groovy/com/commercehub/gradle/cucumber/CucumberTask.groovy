@@ -54,7 +54,6 @@ class CucumberTask extends DefaultTask implements CucumberRunnerOptions {
 
     Configuration getConfiguration() {
         Configuration configuration = new Configuration(reportsDir, "${project.name}-${sourceSet.name}")
-        configuration.setStatusFlags(false, false, false, false)
         configuration.parallelTesting = true
         configuration.runWithJenkins = false
 

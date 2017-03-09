@@ -95,7 +95,7 @@ class CucumberRunner {
     }
 
     List<Feature> parseFeatureResult(File jsonReport) {
-        return new ReportParser(configuration).parseJsonResults([jsonReport.absolutePath])
+        return new ReportParser(configuration).parseJsonFiles([jsonReport.absolutePath])
     }
 
     CucumberFeatureResult createResult(Feature feature) {
